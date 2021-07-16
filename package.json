@@ -1,0 +1,29 @@
+{
+  "name": "devmeetupproject",
+  "version": "1.0.0",
+  "description": "social network for devs",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Nam Nguyen",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "gravatar": "^1.8.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.13",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
+}

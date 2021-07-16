@@ -1,0 +1,6 @@
+{
+  "mongoURL": "mongodb+srv://nnguyen6:Lgad310126@devmeetup.blums.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientID": "7de63d6eae795f92ccb8",
+  "githubSecret": "a91cd379485e1d19a83c87bcbcaa5be4fe604bf1 "
+}
