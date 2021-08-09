@@ -46,16 +46,17 @@ const EditProfile = ({
       instagram: loading || !profile.social ? '' : profile.social.instagram,
     });
   }, [
+    // eslint-disable-next-line
     loading,
     getCurrentProfile,
-    profile.company,
-    profile.website,
-    profile.location,
-    profile.status,
-    profile.skills,
-    profile.githubusername,
-    profile.social,
-    profile.bio,
+    // profile.company,
+    // profile.website,
+    // profile.location,
+    // profile.status,
+    // profile.skills,
+    // profile.githubusername,
+    // profile.social,
+    // profile.bio,
   ]);
 
   const {
