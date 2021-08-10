@@ -5,9 +5,11 @@ import { getGithubRepos } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
 
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
+  //WARNING: if getGIthubRepos doesn't get the repos even if the username is correct, that means the githubtoken in config/default.js is expired. Create a new one on Github Developer settings
   useEffect(() => {
     getGithubRepos(username);
   }, [getGithubRepos]);
+
   return (
     <div className='profile-github'>
       <h2 className='text-primary my-1'>Github repository</h2>

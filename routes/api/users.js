@@ -5,21 +5,21 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
-const User = require('../../models/User.js');
+const normalize = require('normalize-url');
 
-// @route:   POST api/users
-// @desc:    Register user
+const User = require('../../models/User');
+
+// @route    POST api/users
+// @desc     Register user
 // @access   Public
 router.post(
   '/',
-  [
-    check('name', 'Name is required').not().isEmpty(),
-    check('email', 'Please include a valid email').isEmail(),
-    check(
-      'password',
-      'Please enter a password with 6 or more characters'
-    ).isLength({ min: 6 }),
-  ],
+  check('name', 'Name is required').notEmpty(),
+  check('email', 'Please include a valid email').isEmail(),
+  check(
+    'password',
+    'Please enter a password with 6 or more characters'
+  ).isLength({ min: 6 }),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -31,36 +31,31 @@ router.post(
     try {
       let user = await User.findOne({ email });
 
-      //See if user exists
       if (user) {
         return res
           .status(400)
           .json({ errors: [{ msg: 'User already exists' }] });
       }
 
-      //Get users gravatar
       const avatar = gravatar.url(email, {
-        s: '200', //size
-        r: 'pg', //rating
-        d: 'mm', //default, mm gives default image
+        s: 200,
+        r: 'pg',
+        d: 'mm',
       });
 
-      //declare user
       user = new User({
         name,
         email,
-        avatar,
         password,
+        avatar,
       });
 
-      //Encrypt password
-      const salt = await bcrypt.genSalt(10); //generate salt
+      const salt = await bcrypt.genSalt(10);
+
       user.password = await bcrypt.hash(password, salt);
 
-      //save the user
       await user.save();
 
-      //Return jsonwebtoken
       const payload = {
         user: {
           id: user.id,
@@ -70,7 +65,7 @@ router.post(
       jwt.sign(
         payload,
         config.get('jwtSecret'),
-        { expiresIn: 3600 },
+        { expiresIn: '5 days' },
         (err, token) => {
           if (err) throw err;
           res.json({ token });
