@@ -28,6 +28,11 @@ Tech I've used:
 
 Check it live at: https://serene-retreat-94411.herokuapp.com/
 
+
+**Credit: https://www.udemy.com/course/mern-stack-front-to-back/**
+
+
+
 ![image](https://user-images.githubusercontent.com/66233296/128817220-9c254900-d1b7-48d4-9f58-8b4e53fcd1cf.png)
 
 ![image](https://user-images.githubusercontent.com/66233296/128817266-79c525ce-3a95-4f3c-94e8-a9e788c53594.png)
@@ -37,5 +42,4 @@ Check it live at: https://serene-retreat-94411.herokuapp.com/
 ![image](https://user-images.githubusercontent.com/66233296/128817291-600864cb-8e51-455e-afc4-706e193e297a.png)
 
 
-**Credit: https://www.udemy.com/course/mern-stack-front-to-back/**
 
