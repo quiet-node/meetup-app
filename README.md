@@ -24,7 +24,6 @@ Tech I've used:
 
   >Gravatar
 
-  >...
 
 Check it live at: https://serene-retreat-94411.herokuapp.com/
 
