@@ -1,4 +1,5 @@
-﻿# MERN-WebDevMeetUp
+﻿# MERN Meetup App
+ Live: https://serene-retreat-94411.herokuapp.com 
 
 A Social network for developers, built on the MERN stack
 
