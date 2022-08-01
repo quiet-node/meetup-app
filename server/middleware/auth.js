@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const config = require('config');
 
 module.exports = function (req, res, next) {
   //next is a callback help move on to the next piece

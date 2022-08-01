@@ -1,6 +1,4 @@
 const express = require('express');
-// const request = require('request');
-const config = require('config');
 const router = express.Router();
 const User = require('../../models/User');
 const auth = require('../../middleware/auth');
@@ -77,7 +75,7 @@ router.post(
 
     //build skills array
     if (skills) {
-      profileFields.skills = skills.split(',').map(skill => skill.trim());
+      profileFields.skills = skills.split(',').map((skill) => skill.trim());
     }
 
     //build social object
@@ -227,7 +225,7 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 
     //Get remove
     const removeIndex = profile.experience
-      .map(item => item.id)
+      .map((item) => item.id)
       .indexOf(req.params.exp_id);
 
     profile.experience.splice(removeIndex, 1);
@@ -300,7 +298,7 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 
     //Get remove
     const removeIndex = profile.education
-      .map(item => item.id)
+      .map((item) => item.id)
       .indexOf(req.params.edu_id);
 
     profile.education.splice(removeIndex, 1);
