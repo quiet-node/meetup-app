@@ -1,5 +1,5 @@
 {
-  "mongoURL": "mongodb+srv://nnguyen6:Lgad310126@devmeetup.blums.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken",
-  "githubToken": "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"
+  "mongoURL": "mongoURL",
+  "jwtSecret": "jwtSecret",
+  "githubToken": "githubToken"
 }
