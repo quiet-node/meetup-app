@@ -36,8 +36,8 @@ Check it live at: https://serene-retreat-94411.herokuapp.com/
 
 **Step 2:** Go to the `client` folder, run `yarn` || `npm install` to install all the needed dependencies
 
-**Step 2:** Back out and go to the `server` folder, create a `.env` file using `.example.env` as the template and fill out the variables.
+**Step 3:** Back out and go to the `server` folder, create a `.env` file using `.example.env` as the template and fill out the variables.
 
-**Step 3:** While still in `server` folder, run `yarn` || `npm install` to install all the needed dependencies
+**Step 4:** While still in `server` folder, run `yarn` || `npm install` to install all the needed dependencies
 
-**Step 4:** Run `yarn server` || `npm run server` to start the server using `nodemon` OR run `yarn dev` || `npm run dev` to start both client and server using `concurrently`
+**Step 5:** Run `yarn server` || `npm run server` to start the server using `nodemon` OR run `yarn dev` || `npm run dev` to start both client and server using `concurrently`
