@@ -29,5 +29,3 @@ Techonologies:
 Check it live at: https://serene-retreat-94411.herokuapp.com/
 
 **Credit: https://www.udemy.com/course/mern-stack-front-to-back/**
-
-//If it happens to not be able to git push heroku main, delete package-lock file then readd, recommit, repush
