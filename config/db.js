@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURL');
+require('dotenv').config();
 
-// const db =
-//   "mongodb+srv://nnguyen6:Lgad310126@devmeetup.blums.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const MONGO_URL = process.env.MONGO_URL;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(db, {
+    await mongoose.connect(MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
