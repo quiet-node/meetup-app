@@ -1,5 +1,6 @@
 node_modules/
 config/default.json
 .env
-*.lock
 client/package-lock.json
+client/yarn.lock
+yarn.lock
