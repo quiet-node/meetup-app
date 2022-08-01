@@ -6,13 +6,13 @@ A Social network for developers, built on the MERN stack
 
 **Functionalities of the app:**
 
-> > Signup Signin into DevConnector
+- Signup Signin into DevConnector
 
-> > Add Details to your profile (Education, Experience, Social Links etc.)
+- Add Details to your profile (Education, Experience, Social Links etc.)
 
-> > Add your Github username to display your top five repositories
+- Add your Github username to display your top five repositories
 
-> > Post your updates, Like and Comment on different posts in the Dev community
+- Post your updates, Like and Comment on different posts in the Dev community
 
 Techonologies:
 
