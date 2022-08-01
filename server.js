@@ -4,13 +4,11 @@ const path = require('path');
 
 const app = express();
 
-//connect db
+/* Mongo DB */
 connectDB();
 
-//init Middleware
+/* Middleware */
 app.use(express.json({ extended: false }));
-
-// app.get('/', (req, res) => res.send('API Running'));
 
 //define Routes
 app.use('/api/users', require('./routes/api/users'));
