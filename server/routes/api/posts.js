@@ -3,7 +3,6 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
 const Post = require('../../models/Post');
-const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
 // @route:   Post api/posts
@@ -110,7 +109,8 @@ router.put('/like/:id', auth, async (req, res) => {
 
     //check if the post has already been liked
     if (
-      post.likes.filter(like => like.user.toString() === req.user.id).length > 0
+      post.likes.filter((like) => like.user.toString() === req.user.id).length >
+      0
     ) {
       return res.status(400).json({ msg: 'Post already liked' });
     }
@@ -135,15 +135,15 @@ router.put('/unlike/:id', auth, async (req, res) => {
 
     //check if the post has already been liked
     if (
-      post.likes.filter(like => like.user.toString() === req.user.id).length ===
-      0
+      post.likes.filter((like) => like.user.toString() === req.user.id)
+        .length === 0
     ) {
       return res.status(400).json({ msg: 'Post has not yet been liked' });
     }
 
     //Get remove index
     const removeIndex = post.likes
-      .map(like => like.user.toString())
+      .map((like) => like.user.toString())
       .indexOf(req.user.id);
 
     post.likes.splice(removeIndex, 1);
@@ -200,7 +200,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
     //Pull out comment
     const comment = post.comments.find(
-      comment => comment.id === req.params.comment_id
+      (comment) => comment.id === req.params.comment_id
     );
 
     //Make sure comment exist
@@ -215,7 +215,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 
     //find comment removeIndex
     const removeIndex = post.comments
-      .map(comment => comment.user.toString())
+      .map((comment) => comment.user.toString())
       .indexOf(req.user.id);
 
     //remove the comment with removeIndex index

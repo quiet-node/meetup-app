@@ -20,7 +20,7 @@ router.get('/', auth, async (req, res) => {
 });
 
 // @route:   POST api/auth
-// @desc:    Authenticate User and get  token
+// @desc:    Authenticate user, get token
 // @access   Public
 router.post(
   '/',
@@ -64,7 +64,7 @@ router.post(
 
       jwt.sign(
         payload,
-        config.get('jwtSecret'),
+        process.env.JWT_SECRET,
         { expiresIn: 3600 },
         (err, token) => {
           if (err) throw err;
