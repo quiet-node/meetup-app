@@ -2,7 +2,7 @@
 
 Live: https://serene-retreat-94411.herokuapp.com
 
-A Social network for developers, built on top of the MERN stack
+A Social network for developers to connect. Built on top of the MERN stack
 
 ## App's functionalities:
 
@@ -25,6 +25,8 @@ A Social network for developers, built on top of the MERN stack
 - JSON Web Token, express-validator
 
 - Gravatar
+
+- Github's REST APIs
 
 Check it live at: https://serene-retreat-94411.herokuapp.com/
 
