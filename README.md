@@ -39,6 +39,7 @@ Check it live at: https://serene-retreat-94411.herokuapp.com/
 **Step 3:** Back out and go to the `server` folder, create a `.env` file using `.example.env` as the template and fill out the variables.
 
   - **Step 3.1:** Go to [cloud.mongodb.com](https://account.mongodb.com/account/login), sign-in then create a new shared cluster with a cloud service (`AWS`, `Azure`, or `Google Cloud`)
+  - **Step 3.2:** When it comes to network access, provide `0.0.0.0/0` as the IP address to allow connect to the cluster from anywhere
   - **Step 3.2:** After done creating the cluster, navigate to the `Database` tab, then hit `Connect` => `Connect Your Application` => copy the URL => back to the project folder => paste it to the `MONGO_URL` variable in `.env` file
 
 **Step 4:** While still in `server` folder, run `yarn` || `npm install` to install all the needed dependencies
