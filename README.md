@@ -28,8 +28,6 @@ A Social network for developers to connect. Built on top of the MERN stack
 
 - Github's REST APIs
 
-Check it live at: https://serene-retreat-94411.herokuapp.com/
-
 **Credit: https://www.udemy.com/course/mern-stack-front-to-back/**
 
 ## Running the project
