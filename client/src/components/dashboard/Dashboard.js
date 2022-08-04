@@ -1,12 +1,12 @@
-import React, { useEffect, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import DashboardActions from './DashboardActions';
-import Experience from './Experience';
-import Education from './Education';
-import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import { Link } from 'react-router-dom';
+import { deleteAccount, getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
+import DashboardActions from './DashboardActions';
+import Education from './Education';
+import Experience from './Experience';
 
 const Dashboard = ({
   getCurrentProfile,
@@ -57,7 +57,7 @@ Dashboard.propTypes = {
   profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
   profile: state.profile,
 });

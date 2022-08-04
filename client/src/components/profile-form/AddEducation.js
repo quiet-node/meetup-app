@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link, withRouter } from 'react-router-dom';
 import { addEducation } from '../../actions/profile';
 
 const AddEducation = ({ addEducation, history }) => {
@@ -20,7 +20,7 @@ const AddEducation = ({ addEducation, history }) => {
   const { school, degree, fieldofstudy, from, to, current, description } =
     formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
@@ -33,7 +33,7 @@ const AddEducation = ({ addEducation, history }) => {
       <small>* = required field</small>
       <form
         class='form'
-        onSubmit={e => {
+        onSubmit={(e) => {
           e.preventDefault();
           addEducation(formData, history);
         }}
@@ -44,7 +44,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='* School/BootCamp'
             name='school'
             value={school}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -54,7 +54,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='* Degree/Certificate'
             name='degree'
             value={degree}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -64,7 +64,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='Field of Study'
             name='fieldofstudy'
             value={fieldofstudy}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           />
         </div>
         <div class='form-group'>
@@ -73,7 +73,7 @@ const AddEducation = ({ addEducation, history }) => {
             type='date'
             name='from'
             value={from}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           />
         </div>
         <div class='form-group'>
@@ -83,7 +83,7 @@ const AddEducation = ({ addEducation, history }) => {
               name='current'
               checked={current}
               value={current}
-              onChange={e => {
+              onChange={(e) => {
                 setFormData({ ...formData, current: !current });
                 toggleDisable(!toDateDisable);
               }}
@@ -97,7 +97,7 @@ const AddEducation = ({ addEducation, history }) => {
             type='date'
             name='to'
             value={to}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             disabled={toDateDisable ? 'disabled' : ''}
           />
         </div>
@@ -108,7 +108,7 @@ const AddEducation = ({ addEducation, history }) => {
             rows='5'
             placeholder='Program Description'
             value={description}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           ></textarea>
         </div>
         <input type='submit' class='btn btn-primary my-1' />

@@ -2,17 +2,17 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
-import Alert from '../layout/Alert';
 import Dashboard from '../dashboard/Dashboard';
+import Alert from '../layout/Alert';
+import NotFound from '../layout/NotFound';
+import Post from '../post/Post';
+import Posts from '../posts/Posts';
+import AddEducation from '../profile-form/AddEducation';
+import AddExperience from '../profile-form/AddExperience';
 import CreateProfile from '../profile-form/CreateProfile';
 import EditProfile from '../profile-form/EditProfile';
-import AddExperience from '../profile-form/AddExperience';
-import AddEducation from '../profile-form/AddEducation';
-import Profiles from '../profiles/Profiles';
 import Profile from '../profile/Profile';
-import Posts from '../posts/Posts';
-import Post from '../post/Post';
-import NotFound from '../layout/NotFound';
+import Profiles from '../profiles/Profiles';
 import PrivateRoute from '../routing/PrivateRoute';
 
 const Routes = () => {

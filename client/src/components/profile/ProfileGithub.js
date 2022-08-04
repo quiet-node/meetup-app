@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getGithubRepos } from '../../actions/profile';
 import Spinner from '../layout/Spinner';
@@ -16,7 +16,7 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
       {repos === null ? (
         <Spinner />
       ) : (
-        repos.map(repo => (
+        repos.map((repo) => (
           <div key={repo._id} className='repo bg-white p-1 my-1'>
             <div>
               <h4>
@@ -55,7 +55,7 @@ ProfileGithub.propTypes = {
   username: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   repos: state.profile.repos,
 });
 

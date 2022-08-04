@@ -1,14 +1,14 @@
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
-import Spinner from '../layout/Spinner';
+import { Link } from 'react-router-dom';
 import { getProfileById } from '../../actions/profile';
-import ProfileTop from './ProfileTop';
+import Spinner from '../layout/Spinner';
 import ProfileAbout from './ProfileAbout';
-import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
+import ProfileExperience from './ProfileExperience';
 import ProfileGithub from './ProfileGithub';
+import ProfileTop from './ProfileTop';
 
 const Profile = ({
   getProfileById,
@@ -45,7 +45,7 @@ const Profile = ({
               <h2 className='text-primary'>Experience</h2>
               {profile.experience.length > 0 ? (
                 <Fragment>
-                  {profile.experience.map(experience => (
+                  {profile.experience.map((experience) => (
                     <ProfileExperience
                       key={experience._id}
                       experience={experience}
@@ -60,7 +60,7 @@ const Profile = ({
               <h2 className='text-primary'>Education</h2>
               {profile.education.length > 0 ? (
                 <Fragment>
-                  {profile.education.map(education => (
+                  {profile.education.map((education) => (
                     <ProfileEducation
                       key={education._id}
                       education={education}
@@ -87,7 +87,7 @@ Profile.propTypes = {
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
 };
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   profile: state.profile,
   auth: state.auth,
 });

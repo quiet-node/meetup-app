@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions/post';
 import Spinner from '../layout/Spinner';
-import PostItem from './PostItem';
 import PostForm from './PostForm';
+import PostItem from './PostItem';
 
 const Posts = ({ post: { posts, loading }, getPosts }) => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const Posts = ({ post: { posts, loading }, getPosts }) => {
         <i className='fas fa-user'>Welcome to the community</i>
         <PostForm />
         <div className='posts'>
-          {posts.map(post => (
+          {posts.map((post) => (
             <PostItem key={post._id} post={post} />
           ))}
         </div>
@@ -33,7 +33,7 @@ Posts.propTypes = {
   post: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   post: state.post,
 });
 

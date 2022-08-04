@@ -1,18 +1,17 @@
 import axios from 'axios';
 import { setAlert } from './alert';
 import {
-  GET_POSTS,
-  GET_POST,
-  POST_ERROR,
-  UPDATE_LIKES,
-  DELETE_POST,
-  ADD_POST,
   ADD_COMMENT,
+  ADD_POST,
+  DELETE_POST,
+  GET_POST,
+  GET_POSTS,
+  POST_ERROR,
   REMOVE_COMMENT,
+  UPDATE_LIKES,
 } from './types';
-
 //Get all posts
-export const getPosts = () => async dispatch => {
+export const getPosts = () => async (dispatch) => {
   try {
     const res = await axios.get('/api/posts');
     dispatch({
@@ -28,7 +27,7 @@ export const getPosts = () => async dispatch => {
 };
 
 //Get post
-export const getPost = id => async dispatch => {
+export const getPost = (id) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/posts/${id}`);
     console.log(res.data);
@@ -45,7 +44,7 @@ export const getPost = id => async dispatch => {
 };
 
 //Add Likes
-export const addLike = postId => async dispatch => {
+export const addLike = (postId) => async (dispatch) => {
   try {
     const res = await axios.put(`/api/posts/like/${postId}`);
     dispatch({
@@ -61,7 +60,7 @@ export const addLike = postId => async dispatch => {
 };
 
 //Remove Like
-export const removeLike = postId => async dispatch => {
+export const removeLike = (postId) => async (dispatch) => {
   try {
     const res = await axios.put(`/api/posts/unlike/${postId}`);
     dispatch({
@@ -77,7 +76,7 @@ export const removeLike = postId => async dispatch => {
 };
 
 //Delete Post
-export const deletePost = postId => async dispatch => {
+export const deletePost = (postId) => async (dispatch) => {
   try {
     await axios.delete(`api/posts/${postId}`);
     dispatch({
@@ -95,7 +94,7 @@ export const deletePost = postId => async dispatch => {
 };
 
 //Add Post
-export const addPost = formData => async dispatch => {
+export const addPost = (formData) => async (dispatch) => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -119,7 +118,7 @@ export const addPost = formData => async dispatch => {
 };
 
 //Add Comment
-export const addComment = (postId, formData) => async dispatch => {
+export const addComment = (postId, formData) => async (dispatch) => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -147,7 +146,7 @@ export const addComment = (postId, formData) => async dispatch => {
 };
 
 //Delete Comment
-export const deleteComment = (postId, commentId) => async dispatch => {
+export const deleteComment = (postId, commentId) => async (dispatch) => {
   try {
     await axios.delete(`/api/posts/comment/${postId}/${commentId}`);
     dispatch({

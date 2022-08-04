@@ -1,12 +1,12 @@
 import {
-  GET_POSTS,
-  GET_POST,
-  POST_ERROR,
-  UPDATE_LIKES,
-  DELETE_POST,
-  ADD_POST,
   ADD_COMMENT,
+  ADD_POST,
+  DELETE_POST,
+  GET_POST,
+  GET_POSTS,
+  POST_ERROR,
   REMOVE_COMMENT,
+  UPDATE_LIKES,
 } from '../actions/types';
 
 const initialState = {
@@ -40,7 +40,7 @@ export default function postReducer(state = initialState, action) {
     case DELETE_POST:
       return {
         ...state,
-        posts: state.posts.filter(post => post._id !== payload),
+        posts: state.posts.filter((post) => post._id !== payload),
         loading: false,
       };
     case POST_ERROR:
@@ -52,7 +52,7 @@ export default function postReducer(state = initialState, action) {
     case UPDATE_LIKES:
       return {
         ...state,
-        posts: state.posts.map(post =>
+        posts: state.posts.map((post) =>
           post._id === payload.postId ? { ...post, likes: payload.likes } : post
         ),
         loading: false,
@@ -69,7 +69,7 @@ export default function postReducer(state = initialState, action) {
         post: {
           ...state.post,
           comments: state.post.comments.filter(
-            comment => comment._id !== payload
+            (comment) => comment._id !== payload
           ),
           load: false,
         },

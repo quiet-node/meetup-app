@@ -1,9 +1,9 @@
 import {
+  CLEAR_PROFILE,
   GET_PROFILE,
   GET_PROFILES,
   GET_REPOS,
   PROFILE_ERROR,
-  CLEAR_PROFILE,
   UPDATE_PROFILE,
 } from '../actions/types';
 

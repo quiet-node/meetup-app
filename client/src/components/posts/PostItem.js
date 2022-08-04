@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { Fragment } from 'react';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
-import { addLike, removeLike, deletePost } from '../../actions/post';
+import { Link } from 'react-router-dom';
+import { addLike, deletePost, removeLike } from '../../actions/post';
 
 const PostItem = ({
   auth,
@@ -29,7 +29,7 @@ const PostItem = ({
       {showActions && (
         <Fragment>
           <button
-            onClick={e => addLike(_id)}
+            onClick={(e) => addLike(_id)}
             type='button'
             class='btn btn-light'
           >
@@ -37,7 +37,7 @@ const PostItem = ({
             <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
           </button>
           <button
-            onClick={e => removeLike(_id)}
+            onClick={(e) => removeLike(_id)}
             type='button'
             class='btn btn-light'
           >
@@ -52,7 +52,7 @@ const PostItem = ({
 
           {!auth.loading && user === auth.user._id && (
             <button
-              onClick={e => deletePost(_id)}
+              onClick={(e) => deletePost(_id)}
               type='button'
               class='btn btn-danger'
             >
@@ -77,7 +77,7 @@ PostItem.propTypes = {
   deletePost: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 

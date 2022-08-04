@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Spinner from '../layout/Spinner';
-import ProfileItems from './ProfileItems';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getProfiles } from '../../actions/profile';
+import Spinner from '../layout/Spinner';
+import ProfileItems from './ProfileItems';
 
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
@@ -23,7 +23,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
           </p>
           <div className='profiles'>
             {profiles.length > 0 ? (
-              profiles.map(profile => (
+              profiles.map((profile) => (
                 <ProfileItems key={profile._id} profile={profile} />
               ))
             ) : (
@@ -41,7 +41,7 @@ Profiles.propTypes = {
   profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
