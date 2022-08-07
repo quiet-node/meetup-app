@@ -2,7 +2,7 @@
 
 Live: https://serene-retreat-94411.herokuapp.com
 
-A Social network for developers to connect. Built on top of the MERN stack
+A Social network for developers to connect. Powered by the MERN stack
 
 ## App's functionalities:
 
